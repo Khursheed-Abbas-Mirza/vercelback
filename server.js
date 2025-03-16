@@ -1,10 +1,10 @@
 const express = require('express');
 const app = express();
-app.set("view engine", "ejs");
+
 // Middleware to parse JSON
 app.use(express.json());
 app.get("/", (req, res) => {
-    res.render("index");
+    res.sendFile(__dirname + "/views/index.html");
 })
 // Sample GET endpoint
 app.get('/api/hello', (req, res) => {
